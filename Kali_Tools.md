@@ -189,6 +189,14 @@ Nikto is a pluggable web server and CGI scanner written in Perl, using rfp's Lib
 
 # 8. Expoitation tools
 ## A. crackmapexec
+- This package is a swiss army knife for pentesting Windows/Active Directory environments.
+- From enumerating logged on users and spidering SMB shares to executing psexec style attacks, auto-injecting Mimikatz/Shellcode/DLL’s into memory using Powershell, dumping the NTDS.dit and more.
+- The biggest improvements over the above tools are:
+# - Pure Python script, no external tools required
+# - Fully concurrent threading
+# - Uses ONLY native WinAPI calls for discovering sessions, users, dumping SAM hashes etc…
+# - Opsec safe (no binaries are uploaded to dump clear-text credentials, inject shellcode etc…)
+Additionally, a database is used to store used/dumped credentals. It also automatically correlates Admin credentials to hosts and vice-versa allowing you to easily keep track of credential sets and gain additional situational awareness in large environments.
 ## B. metasploit framework
 - One of the best sources of information on using the Metasploit Framework is Metasploit Unleashed, a free online course created by Offensive Security. 
 - Metasploit Unleashed guides you from the absolute basics of Metasploit all the way through to advanced topics.
@@ -268,13 +276,25 @@ Nikto is a pluggable web server and CGI scanner written in Perl, using rfp's Lib
 - Impacket is a collection of Python3 classes focused on providing access to network packets. 
 - Impacket allows Python3 developers to craft and decode network packets in simple and consistent manner. 
 - It includes support for low-level protocols such as IP, UDP and TCP, as well as higher-level protocols such as NMB and SMB.
-
-Impacket is highly effective when used in conjunction with a packet capture utility or package such as Pcapy. Packets can be constructed from scratch, as well as parsed from raw data. Furthermore, the object oriented API makes it simple to work with deep protocol hierarchies.
+- Impacket is highly effective when used in conjunction with a packet capture utility or package such as Pcapy. 
+- Packets can be constructed from scratch, as well as parsed from raw data. Furthermore, the object oriented API makes it simple to work with deep protocol hierarchies.
 ## G. mimikatz
+- Mimikatz uses admin rights on Windows to display passwords of currently logged in users in plaintext.
 ## H. powershell empire
+- This package contains a post-exploitation framework that includes a pure-PowerShell2.0 Windows agent, and a pure Python Linux/OS X agent. 
+- It is the merge of the previous PowerShell Empire and Python EmPyre projects. 
+- The framework offers cryptologically-secure communications and a flexible architecture. 
+- On the PowerShell side, Empire implements the ability to run PowerShell agents without needing powershell.exe, rapidly deployable post-exploitation modules ranging from key loggers to Mimikatz, and adaptable communications to evade network detection, all wrapped up in a usability-focused framework.
 ## I. powersploit
+- PowerSploit is a series of Microsoft PowerShell scripts that can be used in post-exploitation scenarios during authorized penetration tests.
 ## J. proxychains4
+- Proxychains is a UNIX program, that hooks network-related libc functions in dynamically linked programs via a preloaded DLL (dlsym(), LD_PRELOAD) and redirects the connections through SOCKS4a/5 or HTTP proxies. 
+- It supports TCP only (no UDP/ICMP etc).
+- This project, proxychains-ng, is the continuation of the unmaintained proxychains project (known as proxychains package in Debian).
+- This package provides the runtime shared library used by proxychains-ng program.
 ## K. weevely
+- Weevely is a stealth PHP web shell that simulate telnet-like connection. 
+- It is an essential tool for web application post exploitation, and can be used as stealth backdoor or as a web shell to manage legit web accounts, even free hosted ones.
 
 # 11. Forensics
 ## A. Forensic carving tools
