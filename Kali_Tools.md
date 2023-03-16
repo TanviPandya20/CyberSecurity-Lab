@@ -147,7 +147,10 @@ Nikto is a pluggable web server and CGI scanner written in Perl, using rfp's Lib
 ## F. crunch
 ## G. hashcat
 ## H. john
+- John the Ripper is a tool designed to help systems administrators to find weak (easy to guess or crack through brute force) passwords, and even automatically mail users warning them about it, if it is desired.
+- Besides several crypt(3) password hash types most commonly found on various Unix flavors, supported out of the box are Kerberos AFS and Windows NT/2000/XP/2003 LM hashes, plus several more with contributed patches.
 ## I. medusa
+
 ## J. ncrack
 ## K. Ophcrack
 ## L. wordlists
@@ -166,6 +169,9 @@ Nikto is a pluggable web server and CGI scanner written in Perl, using rfp's Lib
 - Aircrack-ng is a fork of aircrack, as that project has been stopped by the upstream maintainer.
 ## D. fernwifi cracker(root)
 ## E. kismet
+- Kismet is a wireless network and device detector, sniffer, wardriving tool, and WIDS (wireless intrusion detection) framework.
+- Kismet works with Wi-Fi interfaces, Bluetooth interfaces, some SDR (software defined radio) hardware like the RTLSDR, and other specialized capture hardware.
+- This is a metapackage containing the kismet tools.
 ## F. pixiwps
 ## G. reaver
 ## H. wifite
@@ -183,8 +189,12 @@ Nikto is a pluggable web server and CGI scanner written in Perl, using rfp's Lib
 - Metasploit Unleashed guides you from the absolute basics of Metasploit all the way through to advanced topics.
 - The Metasploit Framework is an open source platform that supports vulnerability research, exploit development, and the creation of custom security tools.
 ## C. msf payload creator
+- A quick way to generate various “basic” Meterpreter payloads using msfvenom which is part of the Metasploit framework.
 ## D. searchsploit
-## E. social engineering toolkit(root)
+## E. Social engineering toolkit(root)
+- The Social-Engineer Toolkit (SET) is an open-source penetration testing framework designed for social engineering. 
+- SET has a number of custom attack vectors that allow you to make a believable attack in a fraction of time. 
+- These kind of tools use human behaviors to trick them to the attack vectors.
 ## F. sqlmap
 - sqlmap goal is to detect and take advantage of SQL injection vulnerabilities in web applications. 
 - Once it detects one or more SQL injections on the target host, the user can choose among a variety of options to perform an extensive back-end database management system fingerprint, retrieve DBMS session user and database, enumerate users, password hashes, privileges, databases, dump entire or user’s specific DBMS tables/columns, run his own SQL statement, read specific files on the file system and more.
@@ -250,14 +260,26 @@ Nikto is a pluggable web server and CGI scanner written in Perl, using rfp's Lib
 
 # 12. Reporting tools
 ## A. Cutycapt
+- CutyCapt is a small cross-platform command-line utility to capture WebKit's rendering of a web page into a variety of vector and bitmap formats, including SVG, PDF, PS, PNG, JPEG, TIFF, GIF, and BMP.
 ## B. Faraday start
+- Faraday is a GUI application that consists of a ZSH terminal and a sidebar with details about your workspaces and hosts.
+- When Faraday supports the command you are running, it will automatically detect it and import the results. 
+- In the example below, the original nmap command that was entered was nmap -A 192.168.0.7, which Faraday converted on the fly.
 ## C. Maltego(installer)
 - Maltego is an open source intelligence and forensics application. 
 - It will offer you timous mining and gathering of information as well as the representation of this information in a easy to understand format.
 - This package replaces previous packages matlegoce and casefile.
 ## D. Pipal
+- All this tool does is to give you the stats and the information to help you analyse the passwords. The real work is done by you in interpreting the results.
 
 # 13. Social Engineering tools
 ## A. Maltego(installer)
+- Maltego is an open source intelligence and forensics application. 
+- It will offer you timous mining and gathering of information as well as the representation of this information in a easy to understand format.
+- This package replaces previous packages matlegoce and casefile.
 ## B. msf Payload creater
+- A quick way to generate various “basic” Meterpreter payloads using msfvenom which is part of the Metasploit framework.
 ## C. Social Engineering toolkit(root)
+- The Social-Engineer Toolkit (SET) is an open-source penetration testing framework designed for social engineering. 
+- SET has a number of custom attack vectors that allow you to make a believable attack in a fraction of time. 
+- These kind of tools use human behaviors to trick them to the attack vectors.
