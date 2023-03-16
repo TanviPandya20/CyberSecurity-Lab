@@ -150,7 +150,12 @@ Nikto is a pluggable web server and CGI scanner written in Perl, using rfp's Lib
 - John the Ripper is a tool designed to help systems administrators to find weak (easy to guess or crack through brute force) passwords, and even automatically mail users warning them about it, if it is desired.
 - Besides several crypt(3) password hash types most commonly found on various Unix flavors, supported out of the box are Kerberos AFS and Windows NT/2000/XP/2003 LM hashes, plus several more with contributed patches.
 ## I. medusa
-
+- Medusa is intended to be a speedy, massively parallel, modular, login brute-forcer. 
+- The goal is to support as many services which allow remote authentication as possible. 
+- The author considers following items as some of the key features of this application: * Thread-based parallel testing. 
+- Brute-force testing can be performed against multiple hosts, users or passwords concurrently. * Flexible user input. Target information (host/user/password) can be specified in a variety of ways. For example, each item can be either a single entry or a file containing multiple entries. 
+- Additionally, a combination file format allows the user to refine their target listing. * Modular design. Each service module exists as an independent .mod file.
+- This means that no modifications are necessary to the core application in order to extend the supported list of services for brute-forcing.
 ## J. ncrack
 ## K. Ophcrack
 ## L. wordlists
@@ -221,18 +226,50 @@ Nikto is a pluggable web server and CGI scanner written in Perl, using rfp's Lib
 # 10. post Exploitation
 ## A. OS backdoors
 ### i. dbd
+- dbd is a Netcat-clone, designed to be portable and offer strong encryption. 
+- It runs on Unix-like operating systems and on Microsoft Win32. dbd features AES-CBC-128 + HMAC-SHA1 encryption (by Christophe Devine), program execution (-e option), choosing source port, continuous reconnection with delay, and some other nice features. 
+- dbd supports TCP/IP communication only. Source code and binaries are distributed under the GNU General Public License.
 ### ii. powersploit
+- PowerSploit is a series of Microsoft PowerShell scripts that can be used in post-exploitation scenarios during authorized penetration tests.
 ### iii. sbd
+- sbd is a Netcat-clone, designed to be portable and offer strong encryption. 
+- It runs on Unix-like operating systems and on Microsoft Win32. sbd features AES-CBC-128 + HMAC-SHA1 encryption (by Christophe Devine), program execution (-e option), choosing source port, continuous reconnection with delay, and some other nice features. 
+- sbd supports TCP/IP communication only.
 ## B. Tunneling and exfilteration
 ### i. dbd
+- dbd is a Netcat-clone, designed to be portable and offer strong encryption. 
+- It runs on Unix-like operating systems and on Microsoft Win32. dbd features AES-CBC-128 + HMAC-SHA1 encryption (by Christophe Devine), program execution (-e option), choosing source port, continuous reconnection with delay, and some other nice features. 
+- dbd supports TCP/IP communication only. Source code and binaries are distributed under the GNU General Public License.
 ### ii. dns2tcpc
+- In this case we are going to tunnel some traffic from a client behind a perimeter firewall to our own server. 
+- Since dns2tcp is using dns (asking for TXT records within a (sub)domain) to archive the goal we need to create a NS record for a new subdomain pointing to the address of our server.
+# - dns2tcp.kali.org. IN NS lab.kali.org.
+- There is no need for a DNS server installation. But please keep in mind that you probably added a new NS to a real DNS zone. And it might take a while until the new subdomain is “active”.
 ### iii. dns2tcpd
+- In the next step (dns2tcpd Usage Example) we create a configuration file on our server (lab.kali.org) and start the daemon. 
+- To make sure everything is working well you should consider using the options “-F” (Run in foreground) and “-d 1” (debugging) at the first start.
 ## C. Web backdoor
 ### i. laudanum
+- Laudanum is a collection of injectable files, designed to be used in a pentest when SQL injection flaws are found and are in multiple languages for different environments.They provide functionality such as shell, DNS query, LDAP retrieval and others.
 ### ii. weevely
+- Weevely is a stealth PHP web shell that simulate telnet-like connection. 
+- It is an essential tool for web application post exploitation, and can be used as stealth backdoor or as a web shell to manage legit web accounts, even free hosted ones.
 ## D. evil-winrm
+- This package contains the ultimate WinRM shell for hacking/pentesting.
+- WinRM (Windows Remote Management) is the Microsoft implementation of WS-Management Protocol. 
+- A standard SOAP based protocol that allows hardware and operating systems from different vendors to interoperate. Microsoft included it in their Operating Systems in order to make life easier to system administrators.
+- This program can be used on any Microsoft Windows Servers with this feature enabled (usually at port 5985), of course only if you have credentials and permissions to use it. So it could be used in a post-exploitation hacking/pentesting phase. 
+- The purpose of this program is to provide nice and easy-to-use features for hacking. 
+- It can be used with legitimate purposes by system administrators as well but the most of its features are focused on hacking/pentesting stuff.
+- It is using PSRP (Powershell Remoting Protocol) for initializing runspace pools as well as creating and processing pipelines.
 ## E. exe2hex
+- A Python script to convert a Windows PE executable file to a batch file and vice versa.
 ## F. impacket
+- Impacket is a collection of Python3 classes focused on providing access to network packets. 
+- Impacket allows Python3 developers to craft and decode network packets in simple and consistent manner. 
+- It includes support for low-level protocols such as IP, UDP and TCP, as well as higher-level protocols such as NMB and SMB.
+
+Impacket is highly effective when used in conjunction with a packet capture utility or package such as Pcapy. Packets can be constructed from scratch, as well as parsed from raw data. Furthermore, the object oriented API makes it simple to work with deep protocol hierarchies.
 ## G. mimikatz
 ## H. powershell empire
 ## I. powersploit
@@ -242,19 +279,53 @@ Nikto is a pluggable web server and CGI scanner written in Perl, using rfp's Lib
 # 11. Forensics
 ## A. Forensic carving tools
 ### i. magicrescue
+- Magic Rescue scans a block device for file types it knows how to recover and calls an external program to extract them. 
+- It looks at “magic bytes” (file patterns) in file contents, so it can be used both as an undelete utility and for recovering a corrupted drive or partition. As long as the file data is there, it will find it.
+- Magic Rescue uses files called ‘recipes’. These files have strings and commands to identify and extract data from devices or forensics images. 
+- So, you can write your own recipes. Currently, there are the following recipes: avi, canon-cr2, elf, flac, gpl, gzip, jpeg-exif, jpeg-jfif, mbox, mbox-mozilla-inbox, mbox-mozilla-sent, mp3-id3v1, mp3-id3v2, msoffice, nikon-raw, perl, png, ppm, sqlite and zip.
+- This package provides magicrescue, dupemap and magicsort commands. magicrescue is a carver and it is useful in forensics investigations.
 ### ii. scalepel
+- scalpel is a fast file carver that reads a database of header and footer definitions and extracts matching files from a set of image files or raw device files.
+- scalpel is filesystem-independent and will carve files from FAT16, FAT32, exFAT, NTFS, Ext2, Ext3, Ext4, JFS, XFS, ReiserFS, raw partitions, etc.
+- scalpel is a complete rewrite of the Foremost 0.69 file carver and is useful for both digital forensics investigations and file recovery.
 ### iii. scrounge-ntfs
+- Scrounge NTFS is a data recovery program for NTFS filesystems. 
+- It reads each block of the hard disk and try to rebuild the original filesystem tree into a directory.
+- This package is useful in forensics investigations.
 ## B. Forensic imaging tools
 ### i. guymager(root)
+- The forensic imager contained in this package, guymager, was designed to support different image file formats, to be most user-friendly and to run really fast. 
+- It has a high speed multi-threaded engine using parallel compression for best performance on multi-processor and hyper-threading machines.
 ## C. PDF Forensic tools
 ### i. pdfid
+- This tool is not a PDF parser, but it will scan a file to look for certain PDF keywords, allowing you to identify PDF documents that contain (for example) JavaScript or execute an action when opened. PDFiD will also handle name obfuscation.
 ### ii. pdfparser
+- This tool will parse a PDF document to identify the fundamental elements used in the analyzed file. It will not render a PDF document.
 ## D. Seluth kit suite
+- The Sleuth Kit, also known as TSK, is a collection of UNIX-based command line file and volume system forensic analysis tools. 
+- The filesystem tools allow you to examine filesystems of a suspect computer in a non-intrusive fashion. Because the tools do not rely on the operating system to process the filesystems, deleted and hidden content is shown.
+- The volume system (media management) tools allow you to examine the layout of disks and other media. You can also recover deleted files, get information stored in slack spaces, examine filesystems journal, see partitions layout on disks or images etc. 
+- But is very important clarify that the TSK acts over the current filesystem only.
+- The Sleuth Kit supports DOS partitions, BSD partitions (disk labels), Mac partitions, Sun slices (Volume Table of Contents), and GPT disks. 
+- With these tools, you can identify where partitions are located and extract them so that they can be analyzed with filesystem analysis tools.
+
+Currently, TSK supports several filesystems, as NTFS, FAT, exFAT, HFS+, Ext3, Ext4, UFS and YAFFS2.
+
+This package contains the set of command line tools in The Sleuth Kit.
 ### i. blkcalc
+- Converts between unallocated disk unit numbers and regular disk unit numbers.
 ### ii. blkls
+- List or output file system data units.
 ### iii. blkstat
+- Display details of a file system data unit (i.e. block or sector).
 ## E. Autopsy (root)
+- The Autopsy Forensic Browser is a graphical interface to the command line digital forensic analysis tools in The Sleuth Kit. 
+- Together, The Sleuth Kit and Autopsy provide many of the same features as commercial digital forensics tools for the analysis of Windows and UNIX file systems (NTFS, FAT, FFS, EXT2FS, and EXT3FS).
 ## F. Binwalk
+- Binwalk is a tool for searching a given binary image for embedded files and executable code. Specifically, it is designed for identifying files and code embedded inside of firmware images. 
+- Binwalk uses the libmagic library, so it is compatible with magic signatures created for the Unix file utility.
+- Binwalk also includes a custom magic signature file which contains improved signatures for files that are commonly found in firmware images such as compressed/archived files, firmware headers, Linux kernels, bootloaders, filesystems, etc.
+- This package is an empty package, because the binary tool is already provided with the library, dependency of this package.
 ## G. Bulk_extractor
 - bulk_extractor is a C++ program that scans a disk image, a file, or a directory of files and extracts useful information without parsing the file system or file system structures. 
 - The results are stored in feature files that can be easily inspected, parsed, or processed with automated tools. 
