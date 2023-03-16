@@ -22,63 +22,50 @@ DNSRecon is a Python script that provides the ability to perform:
 - Fierce is a semi-lightweight scanner that helps locate non-contiguous IP space and hostnames against specified domains. It's really meant as a pre-cursor to nmap, unicornscan, nessus, nikto, etc, since all of those require that you already know what IP space you are looking for.
 ## B. IPS/IDS Identification
 ### i. ibd
+- Checks if a given domain uses load-balancing.
 ### ii. Wafw00f
-## C. Live host identification
-### i. arping
-### ii. fping
-### iii. hping3
-## D. Network and Port Scanners
+This package identifies and fingerprints Web Application Firewall (WAF) products using the following logic:
+
+- Sends a normal HTTP request and analyses the response; this identifies a number of WAF solutions.
+- If that is not successful, it sends a number of (potentially malicious) HTTP requests and uses simple logic to deduce which WAF it is.
+- If that is also not successful, it analyses the responses previously returned and uses another simple algorithm to guess if a WAF or security solution is actively responding to the attacks.
+## C. Network and Port Scanners
 ### i. masscan
+- MASSCAN is TCP port scanner which transmits SYN packets asynchronously and produces results similar to nmap, the most famous port scanner. 
+- Internally, it operates more like scanrand, unicornscan, and ZMap, using asynchronous transmission. It's a flexible utility that allows arbitrary address and port ranges.
 ### ii. nmap
 - Nmap is a utility for network exploration or security auditing. 
 - It supports ping scanning (determine which hosts are up), many port scanning techniques, version detection (determine service protocols and application versions listening behind ports), and TCP/IP fingerprinting (remote host OS or device identification). 
 - Nmap also offers flexible target and port specification, decoy/stealth scanning, sunRPC scanning, and more. Most Unix and Windows platforms are supported in both GUI and commandline modes. 
 - Several popular handheld devices are also supported, including the Sharp Zaurus and the iPAQ.
-## E. OSINT analysis
-### i. spiderfoot
-### ii. spiderfoot cli
-### iii. theharvester
-## F. Route Analysis
-### i. netdiscover
-### ii. netmask
-## G. SMB Analysis
-### i. enum4linux
-### ii. nbtscan
-### iii. smbmap
-## H. SMTP Analysis
-### i. swakes
-## I. SMNP Analysis
-### i. onesixtyone
-### ii. snmp-check
-## J. SSL Analysis
-### i. ssldump
-### ii. sslh
-### iii. sslscan
-## K. Amass
-## L. Dmitry
-## M. ike-scan
-## N. legion(root)
+## D. legion(root)
 - This package contains an open source, easy-to-use, super-extensible and semi-automated network penetration testing tool that aids in discovery, reconnaissance and exploitation of information systems. Legion is a fork of SECFORCE's Sparta.
-## O. maltego(installer)
+## E. maltego(installer)
 - Maltego is an open source intelligence and forensics application. 
 - It will offer you timous mining and gathering of information as well as the representation of this information in a easy to understand format.
 - This package replaces previous packages matlegoce and casefile.
-## P. netdiscover
-## Q. nmap
+## F. netdiscover
+- Netdiscover is an active/passive address reconnaissance tool, mainly developed for those wireless networks without dhcp server, when you are wardriving. 
+- It can be also used on hub/switched networks.
+## G. nmap
 - Nmap is a utility for network exploration or security auditing. 
 - It supports ping scanning (determine which hosts are up), many port scanning techniques, version detection (determine service protocols and application versions listening behind ports), and TCP/IP fingerprinting (remote host OS or device identification). 
 - Nmap also offers flexible target and port specification, decoy/stealth scanning, sunRPC scanning, and more. Most Unix and Windows platforms are supported in both GUI and commandline modes. 
 - Several popular handheld devices are also supported, including the Sharp Zaurus and the iPAQ.
-## R. recon-ng
-## S. spiderfoot
+## H. recon-ng
+- Recon-ng is Open-Source Intelligence, the simplest and most useful reconnaissance tool. 
+- Recon-ng UI is fairly similar to that of Metasploit 1 and Metasploit 2. On Kali Linux, Recon-ng provides a command-line interface that we can run on Kali Linux. - -- This tool can be used to collect data on our target (domain).
+## I. spiderfoot
+- This package contains an open source intelligence (OSINT) automation tool. 
+- Its goal is to automate the process of gathering intelligence about a given target, which may be an IP address, domain name, hostname, network subnet, ASN, e-mail address or person's name.
 
 # 2. Vulnarebility Analysis
 ## A. Fuzzing Tools
 ### i. spike- generic_listen_tcp
-### ii. spike- generic_send_tcp
-### iii. spike- generic_send_udp
+- When you need to analyze a new network protocol for buffer overflows or similar weaknesses, the SPIKE is the tool of choice for professionals. While it requires a strong knowledge of C to use, it produces results second to none in the field.
 ## B. VoIP tools
 ### i. voiphopper
+- VoIP Hopper is a GPLv3 licensed security tool, written in C that rapidly runs a VLAN Hop security test. VoIP Hopper is a VoIP infrastructure security testing tool but also a tool that can be used to test the (in)security of VLANs. Dependencies: libc6.
 ## C. Legion
 - This package contains an open source, easy-to-use, super-extensible and semi-automated network penetration testing tool that aids in discovery, reconnaissance and exploitation of information systems. Legion is a fork of SECFORCE's Sparta.
 ## D. nikto
@@ -91,32 +78,29 @@ Nikto is a pluggable web server and CGI scanner written in Perl, using rfp's Lib
 - Nmap also offers flexible target and port specification, decoy/stealth scanning, sunRPC scanning, and more. Most Unix and Windows platforms are supported in both GUI and commandline modes. 
 - Several popular handheld devices are also supported, including the Sharp Zaurus and the iPAQ.
 ## F. unix-privesc-check
+- Unix-privesc-checker is a script that runs on Unix systems (tested on Solaris 9, HPUX 11, Various Linuxes, FreeBSD 6.2). 
+- It tries to find misconfigurations that could allow local unprivileged users to escalate privileges to other users or to access local apps (e.g. databases).
 
 # 3. Web application analysis
 ## A. CMS and framework identification
 ### i. WPscan
+- WPScan is a very fast WordPress vulnerability scanner written in the Ruby programming language and preinstalled in Kali Linux. The following information can be extracted using WPScan: The plugins list. The name of the theme.
 ## B. Web application proxies
 ### i. Burpsuite
 - Burp Suite is an integrated platform for performing security testing of web applications. Its various tools work seamlessly together to support the entire testing process, from initial mapping and analysis of an application's attack surface, through to finding and exploiting security vulnerabilities.
-## C. Web crawlers & directory bruteforce
-### i. dirb
-### ii. ffuf
-### iii. wfuzz
 ## D. Web vulnerability scanners
 ### i. Cadaver
-### ii. whatweb
-### iii. davtest
 ## E. Burpsuite
 - Burp Suite is an integrated platform for performing security testing of web applications. Its various tools work seamlessly together to support the entire testing process, from initial mapping and analysis of an application's attack surface, through to finding and exploiting security vulnerabilities.
-## F. Commix
-## G. Skipfish
-## H. sqlmap
+## F. sqlmap
 - sqlmap goal is to detect and take advantage of SQL injection vulnerabilities in web applications. 
 - Once it detects one or more SQL injections on the target host, the user can choose among a variety of options to perform an extensive back-end database management system fingerprint, retrieve DBMS session user and database, enumerate users, password hashes, privileges, databases, dump entire or user’s specific DBMS tables/columns, run his own SQL statement, read specific files on the file system and more.
-## I. WPscan
+## G. WPscan
+- WPScan is a very fast WordPress vulnerability scanner written in the Ruby programming language and preinstalled in Kali Linux. The following information can be extracted using WPScan: The plugins list. The name of the theme.
 
 # 4. Database assessment
 ## A. SQLite database browser
+- SQLite Database Browser is a visual tool used to create, design and edit database files compatible with SQLite. Its interface is based on QT, and is meant to be used for users and developers that want to create databases, edit and search data using a familiar spreadsheet-like interface, without the need to learn complicated SQL commands. 
 ## B. sqlmap
 - sqlmap goal is to detect and take advantage of SQL injection vulnerabilities in web applications. 
 - Once it detects one or more SQL injections on the target host, the user can choose among a variety of options to perform an extensive back-end database management system fingerprint, retrieve DBMS session user and database, enumerate users, password hashes, privileges, databases, dump entire or user’s specific DBMS tables/columns, run his own SQL statement, read specific files on the file system and more.
@@ -124,8 +108,7 @@ Nikto is a pluggable web server and CGI scanner written in Perl, using rfp's Lib
 # 5. Password attacks
 ## A. offline attacks
 ### i. hashcat
-### ii. hashid
-### iii. hash-identifier
+- Hashcat supports five unique modes of attack for over 300 highly-optimized hashing algorithms. hashcat currently supports CPUs, GPUs, and other hardware accelerators on Linux, and has facilities to help enable distributed password cracking.
 ## B. online attacks
 ### i. hydra
 - Hydra is a parallelized login cracker which supports numerous protocols to attack. It is very fast and flexible, and new modules are easy to add.
@@ -135,37 +118,32 @@ Nikto is a pluggable web server and CGI scanner written in Perl, using rfp's Lib
 - This tool makes it possible for researchers and security consultants to show how easy it would be to gain unauthorized access to a system remotely.
 - This package provides the GTK+ based GUI for hydra.
 ### iii. pratator
+- Patator is a multi-purpose brute-forcer, with a modular design and a flexible usage. 
+- Currently it supports the following modules: ftp_login : Brute-force FTP. ssh_login : Brute-force SSH.
 ## C. passing the hash tools
 ### i. smbmaps
-### ii. mimikatz
-### iii. pth-curl
+- SMBMap allows users to enumerate samba share drives across an entire domain. 
+- List share drives, drive permissions, share contents, upload/download functionality, file name auto-download pattern matching, and even execute remote commands.
 ## D. password profiling and wordlists
-### i. Cewl
-### ii. Crunch
-### iii. rsmengler
-## E. cewl
-## F. crunch
-## G. hashcat
-## H. john
+### i. john
 - John the Ripper is a tool designed to help systems administrators to find weak (easy to guess or crack through brute force) passwords, and even automatically mail users warning them about it, if it is desired.
 - Besides several crypt(3) password hash types most commonly found on various Unix flavors, supported out of the box are Kerberos AFS and Windows NT/2000/XP/2003 LM hashes, plus several more with contributed patches.
-## I. medusa
+### ii. medusa
 - Medusa is intended to be a speedy, massively parallel, modular, login brute-forcer. 
 - The goal is to support as many services which allow remote authentication as possible. 
 - The author considers following items as some of the key features of this application: * Thread-based parallel testing. 
 - Brute-force testing can be performed against multiple hosts, users or passwords concurrently. * Flexible user input. Target information (host/user/password) can be specified in a variety of ways. For example, each item can be either a single entry or a file containing multiple entries. 
 - Additionally, a combination file format allows the user to refine their target listing. * Modular design. Each service module exists as an independent .mod file.
 - This means that no modifications are necessary to the core application in order to extend the supported list of services for brute-forcing.
-## J. ncrack
-## K. Ophcrack
-## L. wordlists
 
 # 6. Wireless Attacks
 ## A. 802.11 wireless tools
 ### i.bully
-### ii. fern wifi cracker(root)
+- Bully is a new implementation of the WPS brute force attack, written in C. It is conceptually identical to other programs, in that it exploits the (now well known) design flaw in the WPS specification. 
+- It has several advantages over the original reaver code. These include fewer dependencies, improved memory and cpu performance, correct handling of endianness, and a more robust set of options.
 ## B. Bluetooth tools
 ### i. spooftooph
+- Spooftooph is designed to automate spoofing or cloning Bluetooth device Name, Class, and Address. Cloning this information effectively allows Bluetooth device to hide in plain site.
 ## C. aircrack-ng
 - aircrack-ng is an 802.11a/b/g WEP/WPA cracking program that can recover a 40-bit, 104-bit, 256-bit or 512-bit WEP key once enough encrypted packets have been gathered. 
 - Also it can attack WPA1/2 networks with some advanced methods or simply by brute force.
@@ -173,30 +151,31 @@ Nikto is a pluggable web server and CGI scanner written in Perl, using rfp's Lib
 - It can also fully use a multiprocessor system to its full power in order to speed up the cracking process.
 - Aircrack-ng is a fork of aircrack, as that project has been stopped by the upstream maintainer.
 ## D. fernwifi cracker(root)
+- This package contains a Wireless security auditing and attack software program written using the Python Programming Language and the Python Qt GUI library, the program is able to crack and recover WEP/WPA/WPS keys and also run other network based attacks on wireless or ethernet based networks.
 ## E. kismet
 - Kismet is a wireless network and device detector, sniffer, wardriving tool, and WIDS (wireless intrusion detection) framework.
 - Kismet works with Wi-Fi interfaces, Bluetooth interfaces, some SDR (software defined radio) hardware like the RTLSDR, and other specialized capture hardware.
 - This is a metapackage containing the kismet tools.
-## F. pixiwps
-## G. reaver
-## H. wifite
 
 # 7. Reverse Engineering
 ## A. clang 
-## B. clang++
-## C. radare2
+- clang. Clang project is a C, C++, Objective C and Objective C++ front-end for the LLVM compiler. 
+- Its goal is to offer a replacement to the GNU Compiler Collection (GCC). Clang implements all of the ISO C++ 1998, 11 and 14 standards and also provides most of the support of C++17.
 ## D. NASMshell
+- Netwide Assembler. NASM will currently output flat-form binary files, a.out, COFF and ELF Unix object files, and Microsoft 16-bit DOS and Win32 object files.
+- Also included is NDISASM, a prototype x86 binary-file disassembler which uses the same instruction table as NASM.
+- NASM is released under the GNU Lesser General Public License (LGPL).
 
 # 8. Expoitation tools
 ## A. crackmapexec
 - This package is a swiss army knife for pentesting Windows/Active Directory environments.
 - From enumerating logged on users and spidering SMB shares to executing psexec style attacks, auto-injecting Mimikatz/Shellcode/DLL’s into memory using Powershell, dumping the NTDS.dit and more.
 - The biggest improvements over the above tools are:
-# - Pure Python script, no external tools required
-# - Fully concurrent threading
-# - Uses ONLY native WinAPI calls for discovering sessions, users, dumping SAM hashes etc…
-# - Opsec safe (no binaries are uploaded to dump clear-text credentials, inject shellcode etc…)
-Additionally, a database is used to store used/dumped credentals. It also automatically correlates Admin credentials to hosts and vice-versa allowing you to easily keep track of credential sets and gain additional situational awareness in large environments.
+- Pure Python script, no external tools required
+- Fully concurrent threading
+- Uses ONLY native WinAPI calls for discovering sessions, users, dumping SAM hashes etc…
+- Opsec safe (no binaries are uploaded to dump clear-text credentials, inject shellcode etc…)
+Additionally, a database is used to store used/dumped credentals. It also automatically correlates Admin credentials to hosts and vice-versa allowing you to easily - - keep track of credential sets and gain additional situational awareness in large environments.
 ## B. metasploit framework
 - One of the best sources of information on using the Metasploit Framework is Metasploit Unleashed, a free online course created by Offensive Security. 
 - Metasploit Unleashed guides you from the absolute basics of Metasploit all the way through to advanced topics.
@@ -204,6 +183,8 @@ Additionally, a database is used to store used/dumped credentals. It also automa
 ## C. msf payload creator
 - A quick way to generate various “basic” Meterpreter payloads using msfvenom which is part of the Metasploit framework.
 ## D. searchsploit
+- Searchsploit is an offline tool, where you can easily search all kind of exploits in offline mode. 
+- By using –help, you can easily see all the features and options which are available to you: Usage: To search the exploits of Linux Kernel 3.2, you can simply type this command: Command: searchsploit linux kernel 3.2.
 ## E. Social engineering toolkit(root)
 - The Social-Engineer Toolkit (SET) is an open-source penetration testing framework designed for social engineering. 
 - SET has a number of custom attack vectors that allow you to make a believable attack in a fraction of time. 
@@ -215,17 +196,62 @@ Additionally, a database is used to store used/dumped credentals. It also automa
 # 9. Sniffing & Spoofing
 ## A. Network sniffers
 ### i. dnschef
+- DNSChef is a highly configurable DNS proxy for Penetration Testers and Malware Analysts. 
+- A DNS proxy (aka “Fake DNS”) is a tool used for application network traffic analysis among other uses.
 ### ii. netsniff-ng
+- netsniff-ng is a high performance Linux network sniffer for packet inspection. It can be used for protocol analysis, reverse engineering or network debugging.
 ## B. spoofing and MITM
 ### i. dnschef
+- DNSChef is a highly configurable DNS proxy for Penetration Testers and Malware Analysts. 
+- A DNS proxy (aka “Fake DNS”) is a tool used for application network traffic analysis among other uses.
 ### ii. rebind
+- Rebind is a tool that implements the multiple A record DNS rebinding attack. 
+- Although this tool was originally written to target home routers, it can be used to target any public (non RFC1918) IP address.
+- Rebind provides an external attacker access to a target router’s internal Web interface. 
+- This tool works on routers that implement the weak end system model in their IP stack, have specifically configured firewall rules, and who bind their Web service to the router’s WAN interface. Note that remote administration does not need to be enabled for this attack to work. 
+- All that is required is that a user inside the target network surf to a Web site that is controlled, or has been compromised, by the attacker.
 ### iii. tcpreplay
+- Tcpreplay is aimed at testing the performance of a NIDS by replaying real background network traffic in which to hide attacks. Tcpreplay allows you to control the speed at which the traffic is replayed, and can replay arbitrary tcpdump traces.
 ## C. ettercap - graphical
+- Ettercap supports active and passive dissection of many protocols (even encrypted ones) and includes many feature for network and host analysis. 
+- Data injection in an established connection and filtering (substitute or drop a packet) on the fly is also possible, keeping the connection synchronized.
 ## D. macchanger
+- GNU MAC Changer is an utility that makes the maniputation of MAC addresses of network interfaces easier. 
+- MAC addresses are unique identifiers on networks, they only need to be unique, they can be changed on most network hardware. 
+- MAC addresses have started to be abused by unscrupulous marketing firms, government agencies, and others to provide an easy way to track a computer across multiple networks. 
+- By changing the MAC address regularly, this kind of tracking can be thwarted, or at least made a lot more difficult.
 ## E. minicom
+- Minicom is a clone of the MS-DOS “Telix” communication program. It emulates ANSI and VT102 terminals, has a dialing directory and auto zmodem download.
 ## F. mitmproxy
+- mitmproxy is an interactive man-in-the-middle proxy for HTTP and HTTPS. It provides a console interface that allows traffic flows to be inspected and edited on the fly.
+Features:
+
+- intercept and modify HTTP and HTTPS requests and responses and modify them on the fly
+- save HTTP conversations for later replay and analysis
+- replay the client-side of an HTTP conversation
+- reverse proxy mode to forward traffic to a specified server
+- transparent proxy mode on OSX and Linux
+- make scripted changes to HTTP traffic using Python
+- SSL/TLS certificates for interception are generated on the fly
+
+This package contains the python-pathod module (previously provided by other source package). The python-netlib module was also included but it has been dropped by upstream in version 1.0.
 ## G. netsniff-ng
+netsniff-ng toolkit currently consists of the following utilities:
+
+- netsniff-ng: a zero-copy packet analyzer, pcap capturing/replaying tool
+- trafgen: a multithreaded low-level zero-copy network packet generator
+- mausezahn: high-level packet generator for appliances with Cisco-CLI
+- ifpps: a top-like kernel networking and system statistics tool
+- curvetun: a lightweight curve25519-based multiuser IP tunnel
+- astraceroute: an autonomous system trace route and DPI testing utility
+- flowtop: a top-like netfilter connection tracking tool
+- bpfc: a [seccomp-]BPF (Berkeley packet filter) compiler, JIT disassembler
 ## H. Responder
+- This package contains Responder/MultiRelay, an LLMNR, NBT-NS and MDNS poisoner. It will answer to specific NBT-NS (NetBIOS Name Service) queries based on their name suffix 
+- [](see: http://support.microsoft.com/kb/163409). 
+- By default, the tool will only answer to File Server Service request, which is for SMB.
+- The concept behind this is to target your answers, and be stealthier on the network. 
+- This also helps to ensure that you don’t break legitimate NBT-NS behavior. You can set the -r option via command line if you want to answer to the Workstation Service request name suffix.
 ## I. Wireshark
 - Wireshark is a network “sniffer” - a tool that captures and analyzes packets off the wire. 
 - Wireshark can decode too many protocols to list here.
@@ -251,7 +277,7 @@ Additionally, a database is used to store used/dumped credentals. It also automa
 ### ii. dns2tcpc
 - In this case we are going to tunnel some traffic from a client behind a perimeter firewall to our own server. 
 - Since dns2tcp is using dns (asking for TXT records within a (sub)domain) to archive the goal we need to create a NS record for a new subdomain pointing to the address of our server.
-# - dns2tcp.kali.org. IN NS lab.kali.org.
+- dns2tcp.kali.org. IN NS lab.kali.org.
 - There is no need for a DNS server installation. But please keep in mind that you probably added a new NS to a real DNS zone. And it might take a while until the new subdomain is “active”.
 ### iii. dns2tcpd
 - In the next step (dns2tcpd Usage Example) we create a configuration file on our server (lab.kali.org) and start the daemon. 
