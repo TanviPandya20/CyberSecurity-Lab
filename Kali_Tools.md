@@ -256,7 +256,17 @@ Nikto is a pluggable web server and CGI scanner written in Perl, using rfp's Lib
 ## E. Autopsy (root)
 ## F. Binwalk
 ## G. Bulk_extractor
+- bulk_extractor is a C++ program that scans a disk image, a file, or a directory of files and extracts useful information without parsing the file system or file system structures. 
+- The results are stored in feature files that can be easily inspected, parsed, or processed with automated tools. 
+- bulk_extractor also creates histograms of features that it finds, as features that are more common tend to be more important.
 ## H. Hashdeep
+hashdeep is a set of tools to compute MD5, SHA1, SHA256, tiger and whirlpool hashsums of arbitrary number of files recursively.
+The main hashdeep features are:
+- It can compare those hashsums with a list of known hashes;
+- The tools can display those that match the list or those that does not match;
+- It can display a time estimation when processing large files.
+- It can do piecewise hashing (hash input files in arbitrary sized blocks).
+- This package is useful in forensics investigations.
 
 # 12. Reporting tools
 ## A. Cutycapt
