@@ -1,0 +1,38 @@
+# <p align="center"> NMAP </p>
+-------------------------
+# a. Explain the subnet and use the NMAP Command to scan the services for the whole subnet.
+## A subnet, or subnetwork, is a segmented piece of a larger network. More specifically, subnets are a logical partition of an IP network into multiple, smaller network segments. The Internet Protocol (IP) is the method for sending data from one computer to another over the internet. Each computer, or host, on the internet has at least one IP address as a unique identifier.
+Command to scan entire subnet - `nmap -sn <network address>/<subnet prefix/CIDR notation>`
+![image](https://user-images.githubusercontent.com/68326118/226402566-708ee988-f3b2-48a3-a94c-dfbb6753eb3a.png)
+
+# b. What is a firewall and mention its types. Use the NMAP command to detect that a firewall protects 
+the host
+## <p align="center">
+  <img src="https://static.javatpoint.com/tutorial/firewall/images/types-of-firewall.png" width="250" alt="dnsenum"/> <br/>
+</p>
+## A Firewall is a network security device that monitors and filters incoming and outgoing network traffic based on an organization’s previously established security policies. At its most basic, a firewall is essentially the barrier that sits between a private internal network and the public Internet. A firewall’s main purpose is to allow non-threatening traffic in and to keep dangerous traffic out.
+## The following are types of firewall techniques that can be implemented as software or hardware:
+- Packet-filtering Firewalls
+- Circuit-level Gateways
+- Application-level Gateways (Proxy Firewalls)
+- Stateful Multi-layer Inspection (SMLI) Firewalls
+- Next-generation Firewalls (NGFW)
+- Threat-focused NGFW
+- Network Address Translation (NAT) Firewalls
+- Cloud Firewalls
+- Unified Threat Management (UTM) Firewalls
+we use the `Standard SYN Scan`
+![image](https://user-images.githubusercontent.com/68326118/226404166-5af6f047-d61f-419b-884b-ea5710337f4a.png)
+
+# c. Use the NMAP command to scan a network and determine which devices are up and running.
+# d. What are vertical and horizontal scanning?
+# e. Use the NMAP command to scan multiple hosts. [HINT: Add hosts into a file and scan it].
+# f. Use NMAP commands to export the output in XML format.
+# g. Use the NMAP command to get OS information about a host. 
+# h. Explain ping sweeping and Perform ping sweeping using Nmap
+
+# 1. What is a web application firewall? How do you use Nmap to detect a WAF? Perform WAF 
+fingerprint detection using NMAP.
+# 2. What is EXIF data? Try to find EXIF data of images on a website using NMAP NSE.
+# 3. Use NMAP NSE to find all subdomains of the website. 
+# 4. Perform a vulnerability scan on the target host using NMAP NSE.
