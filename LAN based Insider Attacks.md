@@ -58,10 +58,36 @@
 - This is how I performed the DoS attack and ARP poisoning attack.
 
 # 3. Perform DNS Spoofing attack using ARP Cache Poisoning attacks
-- As We saw in the previous attack, We have made change in Ettercap DNS file and it will leads to the Dos attack for the given system. so we can change any website name with HTTPS to HTTP and perform many attacks from that.
+- As We saw in the previous attack, We have made change in Ettercap DNS file and it will leads to the Dos attack for the given system. So we can make changes in DNS file or track the domain names of the traffic by this.
 ![image](https://user-images.githubusercontent.com/67452535/228031417-70cb1bbf-9284-4e29-a963-c0e572afb90f.png)
 
 <br/>
 
 - This is how I performed the DNS spoofing attack in target system.
 
+# 4. Invoke ‘sslstrip tool’ for stealing passwords from any machine that is connected to a LAN by 
+stripping the HTTPS connection.
+- In SSL striping we basically remove the digital certificate given to the web in the target system.
+- It will remove the HTTPS security and make HTTP website so it will be vulnerable to many web attacks.
+![image](https://user-images.githubusercontent.com/67452535/228033017-d37da1ed-b245-461a-97a1-39d6818512b6.png)
+
+<br/>
+
+# 5. Use arp_cop and scan_poisoner plugins to learn about the detection of ARP attacks.
+- In this we will detact the attacker by using ettercap in target system. 
+- We will download ettercap in taget system and actvate "arp_cop" plugin. It will show the warnings that which system is trying to attack or facking the IP address.
+![image](https://user-images.githubusercontent.com/67452535/228033701-ff7268d6-e748-4aaf-b91b-8e03ea03841e.png)
+
+<br/>
+
+![image](https://user-images.githubusercontent.com/67452535/228033863-19574bfd-989f-4379-9b9b-eba83d35969f.png)
+
+<br/>
+
+- Then I had activate the plugin "scan_poisoner" that will show the systems which are trying send the spam requests or attacking the network.
+![image](https://user-images.githubusercontent.com/67452535/228034553-683bba56-aa47-4b8f-aa20-6cd9b36cfe35.png)
+
+<br/>
+
+# Conclusion
+## From this assignment I had clear idea about the various LAN insider attacks and how can we perform and detect those attacks with the use of Ettercap and WireShark. How we can use these tools both offensive an defensive way. Also I got the clear idea of working LAN system.
