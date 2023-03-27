@@ -58,5 +58,10 @@
 - This is how I performed the DoS attack and ARP poisoning attack.
 
 # 3. Perform DNS Spoofing attack using ARP Cache Poisoning attacks
-- 
+- As We saw in the previous attack, We have made change in Ettercap DNS file and it will leads to the Dos attack for the given system. so we can change any website name with HTTPS to HTTP and perform many attacks from that.
+![image](https://user-images.githubusercontent.com/67452535/228031417-70cb1bbf-9284-4e29-a963-c0e572afb90f.png)
+
+<br/>
+
+- This is how I performed the DNS spoofing attack in target system.
 
