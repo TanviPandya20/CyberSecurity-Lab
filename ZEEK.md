@@ -1,4 +1,5 @@
-![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/66de8d8b-3614-4781-b941-4a196296338e)![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/322a9a95-8425-485f-91a8-b6b7db0bec7d)# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/75b25c89-c2cd-48e4-bdbb-9282ff8b23ac)</p>
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/75b25c89-c2cd-48e4-bdbb-9282ff8b23ac)</p>
+
 # <p align="center">ZEEK</p>
 ## <p align="center">Introduction</p>
 - Zeek (formerly Bro) is an open-source and commercial network monitoring tool (traffic analyser).
@@ -89,6 +90,10 @@
 # <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/42f48392-87bf-4298-9bbf-e1a9d0c3a136)
 </p>
 
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/66de8d8b-3614-4781-b941-4a196296338e)</p>
+
+# <p align="center>"![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/322a9a95-8425-485f-91a8-b6b7db0bec7d)</p>
+
 ## <p align="center">CLI Kung-Fu Recall: Processing Zeek Logs</p>
 
 # <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/e467348c-c0fd-4167-a6aa-a057c588c07c)
@@ -100,27 +105,34 @@
 
 ## <p align="center">Zeek Signatures</p>
 
-# <p align="center"></p>
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/f32d9e96-0f22-492c-b02f-2a02dda0986d)
+</p>
 
 ## <p align="center">Zeek Scripts | Fundamentals</p>
 
-# <p align="center"></p>
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/7f5d8060-1be1-4789-ae57-eb1798e1e19d)
+</p>
 
 ## <p align="center">Zeek Scripts | Scripts and Signatures</p>
 
-# <p align="center"></p>
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/c36a0246-c45b-4f17-912c-54d259dfcae7)
+</p>
 
 ## <p align="center">Zeek Scripts | Frameworks</p>
 
-# <p align="center"></p>
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/c7ad21cb-6caf-44dd-bac9-b9208f1436f2)
+</p>
 
 ## <p align="center">Zeek Scripts | Packages</p>
 
-# <p align="center"></p>
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/b2ff8024-4669-43a1-849d-7355a669f707)
+</p>
 
 # <p align="center">ZEEK Exercises</p>
 
-# <p align="center"></p>
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/faffe67b-389f-49a3-b9ec-1254b0997c65)
+</p>
+
 ## <p align="center">Anomalous DNS</p>
 ## <p align="center">Phishing</p>
 ## <p align="center">Log4J</p>
