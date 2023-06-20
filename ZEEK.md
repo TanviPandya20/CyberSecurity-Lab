@@ -1,4 +1,4 @@
-# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/75b25c89-c2cd-48e4-bdbb-9282ff8b23ac)</p>
+![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/66de8d8b-3614-4781-b941-4a196296338e)![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/322a9a95-8425-485f-91a8-b6b7db0bec7d)# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/75b25c89-c2cd-48e4-bdbb-9282ff8b23ac)</p>
 # <p align="center">ZEEK</p>
 ## <p align="center">Introduction</p>
 - Zeek (formerly Bro) is an open-source and commercial network monitoring tool (traffic analyser).
@@ -9,6 +9,10 @@
 - Exercise files are located in the folder on the desktop. Log cleaner script "clear-logs.sh" is available in each exercise folder.
 
 ## <p align="center">Network Security Monitoring and Zeek</p>
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/0ade983f-ba1e-4c35-80c7-4fc9fa47eace)
+</p>
+
 ### Introduction to Network Monitoring Approaches
 - Network monitoring is highly focused on IT assets like uptime (availability), device health and connection quality (performance), and network traffic balance and management (configuration). Monitoring and visualising the network traffic, troubleshooting, and root cause analysis are also part of the Network Monitoring process. 
 
@@ -53,16 +57,70 @@
 # <p align="center"> ![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/81688984-ee4c-43ab-9f97-a8dc82e20ca4)
 </p>
 
+## <p align="center">Zeek Logs</p>
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/dc765b3c-388c-45ea-8712-a36ba6d7d5d1)
+</p>
+- Zeek generates log files according to the traffic data. You will have logs for every connection in the wire, including the application level protocols and fields. Zeek is capable of identifying 50+ logs and categorising them into seven categories.
+- Each log output consists of multiple fields, and each field holds a different part of the traffic data. Correlation is done through a unique value called "UID". The "UID" represents the unique identifier assigned to each session.
+
+### Zeek logs in a nutshell
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/1283ec67-0510-4914-b2e8-678697a95057)
+</p>
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/fdb2a676-6ce0-4e1f-9ef5-378eda9ac12f)
+</p>
+
+### Brief log usage primer table
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/00806b8d-9db9-464e-bda8-28340359a9e9)
+</p>
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/2dc3b658-5118-4a86-9604-e7e4eb330ec8)
+</p>
+
+- cat dns.log | zeek-cut -d ts id.orig_h id.resp_h query
+
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/400bb186-0b88-42e1-8996-9c262e6c12d4)
+</p>
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/42f48392-87bf-4298-9bbf-e1a9d0c3a136)
+</p>
+
+## <p align="center">CLI Kung-Fu Recall: Processing Zeek Logs</p>
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/e467348c-c0fd-4167-a6aa-a057c588c07c)
+</p>
+
 # <p align="center"></p>
 
-## <p align="center">Zeek Logs</p>
-## <p align="center">CLI Kung-Fu Recall: Processing Zeek Logs</p>
+# <p align="center"></p>
+
 ## <p align="center">Zeek Signatures</p>
+
+# <p align="center"></p>
+
 ## <p align="center">Zeek Scripts | Fundamentals</p>
+
+# <p align="center"></p>
+
 ## <p align="center">Zeek Scripts | Scripts and Signatures</p>
+
+# <p align="center"></p>
+
 ## <p align="center">Zeek Scripts | Frameworks</p>
+
+# <p align="center"></p>
+
 ## <p align="center">Zeek Scripts | Packages</p>
+
+# <p align="center"></p>
+
 # <p align="center">ZEEK Exercises</p>
+
+# <p align="center"></p>
 ## <p align="center">Anomalous DNS</p>
 ## <p align="center">Phishing</p>
 ## <p align="center">Log4J</p>
