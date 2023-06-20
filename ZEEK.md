@@ -92,26 +92,115 @@
 
 # <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/66de8d8b-3614-4781-b941-4a196296338e)</p>
 
-# <p align="center>"![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/322a9a95-8425-485f-91a8-b6b7db0bec7d)</p>
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/322a9a95-8425-485f-91a8-b6b7db0bec7d)</p>
 
 ## <p align="center">CLI Kung-Fu Recall: Processing Zeek Logs</p>
 
 # <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/e467348c-c0fd-4167-a6aa-a057c588c07c)
 </p>
 
-# <p align="center"></p>
-
-# <p align="center"></p>
+- Having the power to manipulate the data at the command line is a crucial skill for analysts. Not only in this room but each time you deal with packets, you will need to use command-line tools, Berkeley Packet Filters (BPF) and regular expressions to find/view/extract the data you are looking for. This task provides quick cheat-sheet like information to help you write CLI queries for your event of interest.
 
 ## <p align="center">Zeek Signatures</p>
 
 # <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/f32d9e96-0f22-492c-b02f-2a02dda0986d)
 </p>
 
+- Zeek supports signatures to have rules and event correlations to find noteworthy activities on the network.
+- Zeek signatures use low-level pattern matching and cover conditions similar to Snort rules. Unlike Snort rules, Zeek rules are not the primary event detection point.
+-  Zeek has a scripting language and can chain multiple events to find an event of interest.
+-  
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/1261ca77-fa47-4793-a80c-fee9f0fe9ff7)
+</p>
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/d37fcc4b-f235-4adc-b900-73912abffc21)
+</p>
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/03f649cf-1265-49f6-ba38-3c64cb9e2610)
+</p>
+
+### Example | Cleartext Submission of Password
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/4da9e54c-1977-43ba-aca3-82b1a27d3d85)
+</p>
+
+- Remember, Zeek signatures support regex. Regex ".*" matches any character zero or more times. The rule will match when a "password" phrase is detected in the packet payload. Once the match occurs, Zeek will generate an alert and create additional log files (signatures.log and notice.log).
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/0cb6a417-37d3-4b44-86e5-e4d2ea51bdc4)
+</p>
+
+- As shown in the above terminal output, the signatures.log and notice.log provide basic details and the signature message. Both of the logs also have the application banner field. So it is possible to know where the signature match occurs. Let's look at the application banner!
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/fcc677df-5df6-43fc-baeb-7d05cb1b394b)
+</p>
+
+- We will demonstrate only one log file output to avoid duplication after this point. You can practice discovering the event of interest by analysing notice.log and signatures.log.
+
+### Example | FTP Brute-force
+
+- Let's create another rule to filter FTP traffic. This time, we will use the FTP content filter to investigate command-line inputs of the FTP traffic. The aim is to detect FTP "admin" login attempts. This basic signature will help us identify the admin login attempts and have an idea of possible admin account abuse or compromise events.
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/7fbabaa7-9700-491c-92ee-79a9c0f4080f)
+</p>
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/cd346715-171b-48ec-a3ee-a5827f4489e7)
+</p>
+
+- Our rule shows us that there are multiple logging attempts with account names containing the "admin" phrase. The output gives us great information to notice if there is a brute-force attempt for an admin account.
+- This signature can be considered a case signature. While it is accurate and works fine, we need global signatures to detect the "known threats/anomalies". We will need those case-based signatures for significant and sophistical anomalies like zero-days and insider attacks in the real-life environment. Having individual rules for each case will create dozens of logs and alerts and cause missing the real anomaly. The critical point is logging logically, not logging everything.
+
+### Let's optimise our rule and make it detect all possible FTP brute-force attempts
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/49d5675c-aff1-4609-98b0-5d57e15956b6)
+</p>
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/c53cc00e-bbff-4d8a-9a4c-994f05c36282)
+</p>
+
+- This rule should show us two types of alerts and help us to correlate the events by having "FTP Username Input" and "FTP Brute-force Attempt" event messages. Let's investigate the logs. We're grepping the logs in range 1001-1004 to demonstrate that the first rule matches two different accounts (admin and administrator).
+
+### Snort Rules in Zeek?
+- While Zeek was known as Bro, it supported Snort rules with a script called snort2bro, which converted Snort rules to Bro signatures. However, after the rebranding, workflows between the two platforms have changed. The official Zeek document mentions that the script is no longer supported and is not a part of the Zeek distribution.
+
+1.
+ 
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/face62f3-bfe3-465e-bb9c-882f938fd4d7)
+</p>
+
+2. 
+ 
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/202c42ab-a73e-4b8d-9cad-aa93a8d48db9)
+</p>
+
+3. 
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/05989a80-04d8-43be-a344-a7047c360743)
+</p>
+
+4.
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/69ba6b91-d76a-45e3-911c-7a4ad023df42)
+</p>
+
+5.
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/63938a2f-1511-481d-8400-901aa3f2bc3b)
+</p>
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/444b5e9d-1c4e-493c-8cf2-e06ae146d314)
+</p>
+
+6.
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/df78c3ec-db8e-4022-a725-9961ed7d7450)
+</p>
+
 ## <p align="center">Zeek Scripts | Fundamentals</p>
 
 # <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/7f5d8060-1be1-4789-ae57-eb1798e1e19d)
 </p>
+
+
 
 ## <p align="center">Zeek Scripts | Scripts and Signatures</p>
 
