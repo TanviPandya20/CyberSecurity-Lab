@@ -23,6 +23,34 @@
 <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/735222a5-1caf-4b0c-945a-8fb39dfe8389)
 </p>
 
+### Zeek Architecture
+<p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/621487f3-f08a-4fa1-807a-cf904182e7ac)
+</p>
+
+- Zeek has two primary layers; "Event Engine" and "Policy Script Interpreter".
+- The Event Engine layer is where the packets are processed; it is called the event core and is responsible for describing the event without focusing on event details. It is where the packages are divided into parts such as source and destination addresses, protocol identification, session analysis and file extraction.
+- The Policy Script Interpreter layer is where the semantic analysis is conducted. It is responsible for describing the event correlations by using Zeek scripts.
+
+### Zeek Frameworks
+<p align="center"> ![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/b82c20e7-9ae3-4d2c-bbdd-819d2bae5a9d)
+</p>
+
+### Zeek Outputs
+- Once you run Zeek, it will automatically start investigating the traffic or the given pcap file and generate logs automatically.
+- Once you process a pcap with Zeek, it will create the logs in the working directory. If you run the Zeek as a service, your logs will be located in the default log path.
+- The default log path is: <b>/opt/zeek/logs/</b>
+
+### Working with Zeek
+<p align="center"> ![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/9293ac8e-9c79-4c6f-b481-9d60e42dfd49)
+</p>
+<p align="center"> ![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/a0ec0937-c39d-471d-bbb8-b3aaee6aabde)
+</p>
+<p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/7e733750-d385-4191-9f6d-c15461b30674)
+</p>
+<p align="center"> ![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/81688984-ee4c-43ab-9f97-a8dc82e20ca4)
+</p>
+<p align="center"></p>
+
 ## <p align="center">Zeek Logs</p>
 ## <p align="center">CLI Kung-Fu Recall: Processing Zeek Logs</p>
 ## <p align="center">Zeek Signatures</p>
