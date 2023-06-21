@@ -1,5 +1,3 @@
-# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/75b25c89-c2cd-48e4-bdbb-9282ff8b23ac)</p>
-
 # <p align="center">ZEEK</p>
 ## <p align="center">Introduction</p>
 - Zeek (formerly Bro) is an open-source and commercial network monitoring tool (traffic analyser).
@@ -322,6 +320,69 @@
 </p>
 
 ## <p align="center">Anomalous DNS</p>
-## <p align="center">Phishing</p>
-## <p align="center">Log4J</p>
+1. 
+- zeek -r dns-tunneling.pcap
+- ls
+- cat dns.log | zeek-cut qtype_name | grep "AAAA" | uniq -c
+- A - 320
 
+ 2. 
+- zeek -r dns-tunneling.pcap
+- cat conn.log | zeek-cut duration | sort -n | tail -1
+- A - 9.420791
+
+3.
+- cat dns.log | less
+- dns.log | zeek-cut query | rev | cut -d '.' -f 1-2 | rev | sort | uniq
+- A - 6
+
+4.
+- cat conn.log | less
+- cat conn.log | zeek-cut id.orig_h id.resp_h | sort -n | uniq -c
+- A - 10.20.57.3
+
+## <p align="center">Phishing</p>
+1.
+- dhcp.log | less
+- cat dhcp.log | zeek-cut client_addr | uniq | sed -e 's/\./[.]/g'
+- A - 10[.]6[.]27[.]102
+  
+2.
+- http.log | less
+- cat http.log | zeek-cut host | grep "smart-fax" | uniq | sed -e 's/\./[.]/g'
+- A - smart-fax[.]com
+  
+3.
+- zeek -C -r phishing.pcap hash-demo.zeek
+- cat files.log | zeek-cut mime_type md5 | grep "word"
+- A - VBA
+  
+4. 
+- cat files.log | zeek-cut mime_type md5 | grep "exe"
+- A - PleaseWaitWindow.exe
+
+5. 
+- echo hopto.org | sed -e 's/\./[.]/g'
+- A - hopto[.]org
+  
+6. 
+- cat http.log | grep "exe"
+- A - knr.exe
+
+## <p align="center">Log4J</p>
+1. 
+- zeek -C -r log4shell.pcapng detection-log4j.zeek
+- cat signatures.log | zeek-cut note | uniq -c
+- A - 3
+
+2. 
+- cat http.log | zeek-cut user_agent | sort | uniq
+- A - Nmap
+
+3. 
+- cat http.log | zeek-cut uri | sort | uniq
+- A - .class
+
+4. 
+- cat log4j.log | zeek-cut uri | sort -nr | uniq
+- A - pwned
