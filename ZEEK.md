@@ -200,23 +200,122 @@
 # <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/7f5d8060-1be1-4789-ae57-eb1798e1e19d)
 </p>
 
+- Zeek has its own event-driven scripting language, which is as powerful as high-level languages and allows us to investigate and correlate the detected events. Since it is as capable as high-level programming languages, you will need to spend time on Zeek scripting language in order to become proficient.
+- In this room, we will cover the basics of Zeek scripting to help you understand, modify and create basic scripts. Note that scripts can be used to apply a policy and in this case, they are called policy scripts.
 
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/9166fb02-3d80-4f8b-8bb7-84cecc4d35ea)
+</p>
+
+2.
+- zeek -C -r smallFlows.pcap dhcp-hostname.zeek
+- cat dhcp.log
+- A - astaro_vineyard
+
+3.
+- cat dhcp.log | zeek-cut host_name | sort -rn | uniq | wc -l
+- A - 17
+
+4.
+- cat dhcp.log | zeek-cut domain
+- A - jaalam.net
+
+5.
+- cat dns.log | zeek-cut query | grep -v -e’*’ -e’-’ | sort -rn | uniq | wc -l
+- A - 1109
 
 ## <p align="center">Zeek Scripts | Scripts and Signatures</p>
 
 # <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/c36a0246-c45b-4f17-912c-54d259dfcae7)
 </p>
 
+- Scripts contain operators, types, attributes, declarations and statements, and directives. Let's look at a simple example event called "zeek_init" and "zeek_done". These events work once the Zeek process starts and stops. Note that these events don't have parameters, and some events will require parameters.
+
+2.
+- zeek -C -r sample.pcap 103.zeek | grep “New Connection Found”| wc -l
+- A - 87
+
+3.
+- zeek -C -r ftp.pcap -s ftp-admin.sig 201.zeek
+- cat signatures.log | grep “ftp-admin” | wc -l
+- A - 1401
+
+4.
+- cat signatures.log | grep “administrator” | wc -l
+- A - 731
+
+5.
+- zeek -C -r ftp.pcap local
+- cat loaded_scripts.log | grep “.zeek” | wc -l
+- A - 498
+
+6.
+- zeek -C -r ftp.pcap /opt/zeek/share/zeek/policy/protocols/ftp/detect-bruteforcing.zeek
+- A - 2
+
 ## <p align="center">Zeek Scripts | Frameworks</p>
 
 # <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/c7ad21cb-6caf-44dd-bac9-b9208f1436f2)
 </p>
+
+- Zeek has 15+ frameworks that help analysts to discover the different events of interest. In this task, we will cover the common frameworks and functions.
+### File Framework | Hashes
+### File Framework | Extract Files
+### Notice Framework | Intelligence
+
+2. 
+- zeek -C -r case1.pcap intelligence-demo.zeek
+- cat intel.log
+- A - IN_HOST_HEADER
+
+3.
+- cat http.log | zeek-cut uri
+- A - knr.exe
+
+4.
+- zeek -C -r case1.pcap hash-demo.zeek
+- cat files.log | zeek-cut md5
+- A - cc28e40b46237ab6d5282199ef78c464
+
+5.
+- zeek -C -r case1.pcap /opt/zeek/share/zeek/policy/frameworks/files/extract-all-files.zeek
+- ls extract_files | nl
+- cd extract_files/
+- cat The_Extract_File
+- A - Microsoft NCSI
+
 
 ## <p align="center">Zeek Scripts | Packages</p>
 
 # <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/b2ff8024-4669-43a1-849d-7355a669f707)
 </p>
 
+- Zeek Package Manager helps users install third-party scripts and plugins to extend Zeek functionalities with ease. The package manager is installed with Zeek and available with the zkg command. Users can install, load, remove, update and create packages with the "zkg" tool.
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/00bf9465-bc79-4bb9-b2c5-fcdcb1c2aca5)
+</p>
+
+### Packages | Cleartext Submission of Password
+### Packages | Geolocation Data 
+
+2. 
+- zeek -Cr http.pcap /opt/zeek/share/zeek/site/zeek-sniffpass
+- A - brozeek
+
+3. 
+- zeek -Cr case2.pcap /opt/zeek/share/zeek/site/geoip-conn
+- cat conn.log
+- A - chicago
+
+4. 
+- A - 23.77.86.54
+
+5. 
+- zeek -Cr case2.pcap sumstats-counttable.zeek
+- A - 4
+
+# <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/6cf25193-ff6c-4dc1-8e2d-1e84fcba31d3)
+</p>
+  
 # <p align="center">ZEEK Exercises</p>
 
 # <p align="center">![image](https://github.com/TanviPandya20/CyberSecurity-Lab/assets/67452535/faffe67b-389f-49a3-b9ec-1254b0997c65)
